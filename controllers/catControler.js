@@ -15,6 +15,7 @@ export const postCatController = (req, res) => {
   let cat = req.body;
   postCat(cat, (err, result) => {
     if (!err) {
+      res.status(201)
       res.json({
         statuscode: 201,
         data: result,
