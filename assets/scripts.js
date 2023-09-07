@@ -9,13 +9,13 @@ const addCards = (items) => {
         //     '<span class="card-title grey-text text-darken-4">' + item.subTitle + '<i class="material-icons right">close</i></span>' +
         //     '<p class="card-text">' + item.description + 'Test desc</p>' +
         //     '</div></div></div>';
-        let itemToAppend =`
+        let itemToAppend = `
         <div class="col s4 center-align">
           <div class="card medium"><div class="card-image waves-effect waves-block waves-light">
             <img class="activator" src="${item.path}">
           </div>
           <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">${ item.title}<i class="material-icons right">more_vert</i></span>
+            <span class="card-title activator grey-text text-darken-4">${item.title}<i class="material-icons right">more_vert</i></span>
             <p><a href="${item.path}">${item.title}</a></p>
           </div>
           <div class="card-reveal">
@@ -77,3 +77,12 @@ $(document).ready(function () {
     getAllCats();
 
 });
+
+
+// Socket.io
+
+let socket = io();
+socket.on('number', (msg) => {
+    console.log('Random number: ' + msg);
+})
+
